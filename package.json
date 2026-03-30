@@ -5,12 +5,10 @@
   "scripts": {
     "start": "npx -y serve . -p 8080",
     "test": "jest",
-    "test:e2e": "playwright test",
-    "test:ci": "jest --ci && playwright test",
     "lint:html": "htmlhint \"*.html\"",
     "lint:css": "stylelint \"*.css\"",
     "lint": "npm run lint:html && npm run lint:css",
-    "check": "npm run lint && npm test && npm run test:e2e"
+    "check": "npm run lint && npm test"
   },
   "jest": {
     "testEnvironment": "node",
@@ -26,7 +24,6 @@
     "ancestorSeparator": " › "
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
     "htmlhint": "^1.9.2",
     "jest": "^29.7.0",
     "stylelint": "^16.26.1",

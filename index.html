@@ -736,11 +736,11 @@
       <div class="hidden md:flex items-center gap-3">
         <div class="nav-links-pill">
           <a href="#problem" class="nav-link magnetic-btn" data-nav-section="problem">Problem</a>
-          <a href="#vorteile" class="nav-link magnetic-btn" data-nav-section="vorteile">Warum TeamRadar</a>
+          <a href="#loesung" class="nav-link magnetic-btn" data-nav-section="loesung">Warum TeamRadar</a>
           <a href="#dashboard" class="nav-link magnetic-btn" data-nav-section="dashboard">Dashboard</a>
-          <a href="#kalender" class="nav-link magnetic-btn" data-nav-section="kalender">Kalender</a>
-          <a href="#teams" class="nav-link magnetic-btn" data-nav-section="teams">Teams</a>
-          <a href="#technik" class="nav-link magnetic-btn" data-nav-section="technik">Tech Stack</a>
+          <a href="#onboarding" class="nav-link magnetic-btn" data-nav-section="onboarding">Kalender</a>
+          <a href="#rollen" class="nav-link magnetic-btn" data-nav-section="rollen">Teams</a>
+          <a href="#architektur" class="nav-link magnetic-btn" data-nav-section="architektur">Tech Stack</a>
         </div>
         <a href="#demo" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--color-accent);color:#fff;font-size:.75rem;font-weight:700;border-radius:10px;text-decoration:none;transition:all .25s ease;box-shadow:0 2px 14px rgba(99,102,241,.25);white-space:nowrap;" onmouseover="this.style.background='var(--color-accent-dim)';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='var(--color-accent)';this.style.transform='translateY(0)'">App testen &rarr;</a>
       </div>
@@ -769,11 +769,11 @@
     <!-- Nav grid -->
     <div class="mm-grid">
       <a href="#problem" class="mm-link" onclick="closeMobileMenu()">Problem</a>
-      <a href="#vorteile" class="mm-link" onclick="closeMobileMenu()">Warum</a>
+      <a href="#loesung" class="mm-link" onclick="closeMobileMenu()">Warum</a>
       <a href="#dashboard" class="mm-link" onclick="closeMobileMenu()">Dashboard</a>
-      <a href="#kalender" class="mm-link" onclick="closeMobileMenu()">Kalender</a>
-      <a href="#teams" class="mm-link" onclick="closeMobileMenu()">Teams</a>
-      <a href="#technik" class="mm-link" onclick="closeMobileMenu()">Technik</a>
+      <a href="#onboarding" class="mm-link" onclick="closeMobileMenu()">Kalender</a>
+      <a href="#rollen" class="mm-link" onclick="closeMobileMenu()">Teams</a>
+      <a href="#architektur" class="mm-link" onclick="closeMobileMenu()">Technik</a>
     </div>
   </div>
 
@@ -796,7 +796,7 @@
       <p class="reveal text-lg md:text-xl text-muted max-w-[680px] mx-auto leading-relaxed">Schluss mit der ewigen Fragerei. TeamRadar visualisiert die Verfügbarkeit deines gesamten Teams auf einen Blick. Wer ist im Meeting? Wer macht Home Office? Alles in einer intuitiven App.</p>
       <div class="reveal mt-10 flex items-center justify-center gap-4 flex-wrap">
         <a href="#demo" class="magnetic-btn" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--color-accent);color:#fff;font-size:.95rem;font-weight:700;border-radius:12px;text-decoration:none;transition:all .25s ease;box-shadow:0 4px 24px rgba(99,102,241,.3);" onmouseover="this.style.background='var(--color-accent-dim)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 32px rgba(99,102,241,.4)'" onmouseout="this.style.background='var(--color-accent)';this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(99,102,241,.3)'">In Echtzeit sehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        <a href="#vorteile" style="display:inline-flex;align-items:center;gap:8px;padding:14px 24px;background:transparent;color:var(--color-muted);font-size:.9rem;font-weight:600;border-radius:12px;text-decoration:none;border:1px solid var(--color-border);transition:all .25s ease;" onmouseover="this.style.borderColor='rgba(99,102,241,.3)';this.style.color='var(--color-text-main)'" onmouseout="this.style.borderColor='var(--color-border)';this.style.color='var(--color-muted)'">Wie es funktioniert</a>
+        <a href="#onboarding" style="display:inline-flex;align-items:center;gap:8px;padding:14px 24px;background:transparent;color:var(--color-muted);font-size:.9rem;font-weight:600;border-radius:12px;text-decoration:none;border:1px solid var(--color-border);transition:all .25s ease;" onmouseover="this.style.borderColor='rgba(99,102,241,.3)';this.style.color='var(--color-text-main)'" onmouseout="this.style.borderColor='var(--color-border)';this.style.color='var(--color-muted)'">Wie es funktioniert</a>
       </div>
       <div class="reveal mt-10 flex items-center justify-center gap-8 flex-wrap">
         <div class="flex items-center gap-2 text-sm" style="color:var(--color-faint);">
@@ -1386,7 +1386,7 @@
       <p class="reveal text-lg text-muted max-w-[620px] mx-auto leading-relaxed">Sechs Kernmodule. Ein Interface. Volle Transparenz.</p>
 
       <!-- ── Module 1 : Live Dashboard ── -->
-      <div class="reveal mt-14 rounded-2xl bg-surface border border-border overflow-hidden card-hover tilt-card">
+      <div class="reveal mt-14 rounded-2xl bg-surface border border-border overflow-hidden card-hover tilt-card bento-featured">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
           <div class="p-8 md:p-10 text-left flex flex-col justify-center">
             <div class="w-12 h-12 rounded-xl bg-accent-soft border border-border-accent flex items-center justify-center text-accent mb-5">
@@ -1437,7 +1437,7 @@
       </div>
 
       <!-- ── Module 2 : Team Management ── -->
-      <div class="reveal mt-5 rounded-2xl bg-surface border border-border overflow-hidden card-hover tilt-card">
+      <div class="reveal mt-5 rounded-2xl bg-surface border border-border overflow-hidden card-hover tilt-card bento-featured">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
           <!-- Animated Team Mockup -->
           <div class="order-2 md:order-1 p-5 md:p-6" style="background:#0b1120;border-right:1px solid rgba(255,255,255,.06);">
@@ -1640,7 +1640,7 @@
 
         <!-- VS Badge -->
         <div class="ov-vs-wrap" style="position:relative;z-index:10;display:flex;align-items:center;justify-content:center;flex-shrink:0;width:0;">
-          <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1c1c26,#111118);border:3px solid #e9eaf0;display:flex;align-items:center;justify-content:center;position:absolute;animation:vsPulse 2.5s ease-in-out infinite;">
+          <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1c1c26,#111118);border:3px solid #e9eaf0;display:flex;align-items:center;justify-content:center;position:absolute;animation:vs-pulse 2.5s ease-in-out infinite;">
             <span style="font-size:.62rem;font-weight:900;color:#fff;letter-spacing:.04em;">VS</span>
           </div>
         </div>
@@ -1768,7 +1768,7 @@
 
       <!-- Header -->
       <div class="text-center mb-16">
-        <span class="reveal inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-5" style="color:#06b6d4;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.18);">Technologie</span>
+        <span class="reveal inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-5" style="color:#06b6d4;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.18);">Technologie &middot; Live-Status</span>
         <h2 class="reveal text-3xl md:text-5xl font-bold leading-[1.1] tracking-tight mb-5">Die Echtzeit-Engine.<br><span style="color:var(--color-accent);">Sync in Millisekunden.</span></h2>
         <p class="reveal text-lg text-muted max-w-[620px] mx-auto leading-relaxed">TeamRadar nutzt eine hochperformante Realtime-Infrastruktur für verzögerungsfreie Status-Updates. Keine manuellen Refreshes &ndash; wer seinen Status ändert, ist sofort für alle sichtbar.</p>
       </div>
@@ -2413,12 +2413,48 @@
       });
     }
 
+    // Mobile Menu Logic
+    const navHamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function openMobileMenu() {
+        if (!mobileMenu || !navHamburger) return;
+        mobileMenu.classList.add('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        navHamburger.classList.add('is-open');
+        navHamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        if (!mobileMenu || !navHamburger) return;
+        mobileMenu.classList.remove('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        navHamburger.classList.remove('is-open');
+        navHamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    if (navHamburger) {
+        navHamburger.addEventListener('click', () => {
+            if (navHamburger.classList.contains('is-open')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+    }
+
     // Smooth scroll for nav
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const target = document.querySelector(targetId);
             if (target) {
+                closeMobileMenu(); // Close menu if a link is clicked
                 window.scrollTo({
                     top: target.offsetTop - 80,
                     behavior: 'smooth'
@@ -2537,6 +2573,12 @@
     <symbol id="i-tasks" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></symbol>
     <symbol id="i-compare" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+    </symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+    </symbol>
   </svg>
 </body>
 </html>

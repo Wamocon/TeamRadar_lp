@@ -1,4 +1,17 @@
-/* TeamRadar — Minimal custom CSS (Tailwind v4 handles everything else) */
+:root {
+  --color-bg: #040810;
+  --color-bg-alt: #0a0f1d;
+  --color-surface: #0f172a;
+  --color-surface-hover: #1e293b;
+  --color-border: rgb(255 255 255 / 8%);
+  --color-border-hover: rgb(255 255 255 / 14%);
+  --color-border-accent: rgb(99 102 241 / 24%);
+  --color-accent: #6366f1;
+  --color-accent-dim: #4f46e5;
+  --color-text-main: #f8fafc;
+  --color-muted: #94a3b8;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
 
 html {
   font-size: 16px;       /* Mobile-first: standard base; scaled up for larger screens */
@@ -99,6 +112,7 @@ html {
 .manuell-badge-bg {
   background: rgb(180 40 40 / 18%);
   color: #b83030;
+  animation: loop-pulse 2s infinite;
 }
 
 .ap-circle {
@@ -152,6 +166,7 @@ html {
   font-size: .68rem;
   font-weight: 800;
   text-align: center;
+  animation: badge-pulse 2s infinite;
 }
 .manuell-badge { color: #b83030; }
 .ap-badge-t { color: #2a6; }
@@ -484,6 +499,10 @@ html {
   100% {
     opacity: 0;
   }
+}
+
+.hai-blink-cursor {
+  animation: hai-blink 1s step-end infinite;
 }
 
 #hai-msg-2,

@@ -107,14 +107,92 @@ describe('index.html: Interne Anker-Links', () => {
   });
 });
 
-describe('Rechtliche Seiten: Grundstruktur', () => {
-  test.each(['legal/agb.html', 'legal/datenschutz.html', 'legal/impressum.html'])(
-    '%s hat gültige HTML-Struktur und enthält TeamRadar',
+describe('index.html: Barrierefreiheit (Accessibility)', () => {
+  let html;
+  beforeAll(() => { html = read('index.html'); });
+
+  test('Alle Buttons haben aria-label oder Textinhalt', () => {
+    const buttons = [...html.matchAll(/<button([^>]+)>/g)];
+    buttons.forEach(([full, attrs]) => {
+      const hasLabel = /aria-label=/i.test(attrs);
+      const hasText  = />\s*[^<\s]/.test(full) || html.substring(html.indexOf(full)).split('</button>')[0].length > full.length;
+      expect(hasLabel || hasText).toBe(true);
+    });
+  });
+
+  test('Bilder haben alt-Attribute', () => {
+    const imgs = [...html.matchAll(/<img([^>]+)>/g)];
+    imgs.forEach(([_, attrs]) => {
+      expect(attrs).toMatch(/alt=/i);
+    });
+  });
+});
+
+describe('index.html: Interne Anker-Links & IDs', () => {
+  let html;
+  beforeAll(() => { html = read('index.html'); });
+
+  test('Navigations-Links verweisen auf existierende IDs', () => {
+    // Collect all href="#..." from nav and mobile menu
+    const navAnchors = [...html.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]).filter(id => id && id !== '#');
+    const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]));
+    
+    const missing = navAnchors.filter((a) => !ids.has(a) && a !== '');
+    expect(missing).toEqual([]);
+  });
+
+  test('Alle Sektionen haben eindeutige IDs', () => {
+    const idMatches = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+    const uniqueIds = new Set(idMatches);
+    expect(idMatches.length).toBe(uniqueIds.size);
+  });
+});
+
+describe('CSS & Design System: Globale Validierung', () => {
+  let css, html;
+  beforeAll(() => { 
+    css = read('style.css'); 
+    html = read('index.html');
+  });
+
+  test('CSS Variablen (Design Tokens) sind definiert', () => {
+    // Check either in style.css or in style block of index.html
+    const hasTokens = (css.includes('--color-accent') && css.includes('--color-bg')) ||
+                      (html.includes('--color-accent') && html.includes('--color-bg'));
+    expect(hasTokens).toBe(true);
+  });
+
+  test('Alle @keyframes werden verwendet', () => {
+    const keyframes = [...css.matchAll(/@keyframes\s+([a-zA-Z0-9_-]+)/g)].map(m => m[1]);
+    const allContent = css + html;
+    keyframes.forEach(name => {
+      // Use regex to find the animation name in any animation shorthand or specific property
+      const usageRegex = new RegExp(`animation(-name)?\\s*:\\s*([^;}]*\\b)?${name}\\b`, 'i');
+      const isUsed = usageRegex.test(allContent);
+      if (!isUsed) {
+        console.warn(`Keyframe "${name}" seems unused in CSS/HTML.`);
+      }
+      expect(isUsed).toBe(true);
+    });
+  });
+});
+
+describe('Rechtliche Seiten: Grundstruktur & Konsistenz', () => {
+  const legalPages = ['legal/agb.html', 'legal/datenschutz.html', 'legal/impressum.html'];
+  
+  test.each(legalPages)(
+    '%s hat gültige HTML-Struktur und enthält TeamRadar Branding',
     (page) => {
       const content = read(page);
       expect(content.toLowerCase()).toContain('<!doctype html');
-      expect(content.toLowerCase()).toContain('<html');
       expect(content).toContain('TeamRadar');
+      expect(content).toContain('href="../style.css"'); // Correct relative path
     }
   );
+
+  test('Abgleich der Impressums-Daten', () => {
+    const impressum = read('legal/impressum.html');
+    expect(impressum).toContain('Wamocon');
+    expect(impressum).toContain('Vertreten durch');
+  });
 });
