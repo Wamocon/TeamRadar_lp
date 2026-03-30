@@ -1,11 +1,9 @@
 import { test, expect } from '@playwright/test';
 import path from 'path';
 
-const fileUrl = `file://${path.resolve('index.html')}`;
-
 test.describe('TeamRadar Landing Page E2E', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto(fileUrl);
+    await page.goto('/');
   });
 
   test('should have the correct title', async ({ page }) => {
