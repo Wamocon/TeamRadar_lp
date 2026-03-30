@@ -26,9 +26,9 @@ test.describe('TeamRadar Landing Page E2E', () => {
     await expect(nav).toBeVisible();
     
     // Check if clicking a nav link smooth scrolls (basic check for target visibility)
-    const featuresLink = page.locator('nav a[href="#features"]');
-    await featuresLink.click();
-    await expect(page.locator('#features')).toBeInViewport();
+    const problemLink = page.locator('nav a[href="#problem"]');
+    await problemLink.click();
+    await expect(page.locator('#problem')).toBeInViewport();
   });
 
   test('should show the cookie banner after a delay', async ({ page }) => {
